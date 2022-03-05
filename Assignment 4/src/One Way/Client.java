@@ -3,17 +3,6 @@ import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.util.Scanner;
 
-class ProjectDetails
-{
-    public static void projectInfo()
-    {
-        System.out.println("A UDP Server and Client in Java");
-        System.out.println("Author: Kells");
-        System.out.println("Version: 1.0");
-        System.out.println("Description: This is a UDP Client in Java");
-    }
-}
-
 public class Client
 {
     private Scanner m_scanner = null;
@@ -45,7 +34,7 @@ public class Client
         }
         catch (Exception e)
         {
-            System.err.println("Exception Occured:44 " + e.getLocalizedMessage());
+            System.err.println("Exception Occurred: " + e.getLocalizedMessage());
             e.printStackTrace();
         }
     }
@@ -62,7 +51,7 @@ public class Client
         }
         catch (Exception e)
         {
-            System.err.println("Exception Occured: " + e.getLocalizedMessage());
+            System.err.println("Exception Occurred: " + e.getLocalizedMessage());
             e.printStackTrace();
         }
     }
@@ -79,7 +68,7 @@ public class Client
         }
         catch (Exception e)
         {
-            System.err.println("Exception Occured: " + e.getLocalizedMessage());
+            System.err.println("Exception Occurred: " + e.getLocalizedMessage());
             e.printStackTrace();
         }
 
@@ -99,8 +88,6 @@ public class Client
 
     public static void main(String[] args)
     {
-        ProjectDetails.projectInfo();
-
         Client client = new Client(4949);
         client.run();
     }

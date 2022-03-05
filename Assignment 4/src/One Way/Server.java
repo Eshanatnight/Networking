@@ -72,13 +72,17 @@ public class Server
         }
     }
 
+    private void run()
+    {
+        initComponents();
+        receiveData();
+        computeCube();
+        sendData();
+    }
     public static void main(String[] args)
     {
         Server server = new Server(4949);
-        server.initComponents();
-        server.receiveData();
-        server.computeCube();
-        server.sendData();
+        server.run();
 
     }
 }
