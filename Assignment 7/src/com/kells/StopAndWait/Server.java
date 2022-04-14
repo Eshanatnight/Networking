@@ -20,6 +20,7 @@ public class Server
 
     Server(int _port)
     {
+        System.out.println("Server Initialized...");
         m_port = _port;
     }
 
@@ -66,7 +67,7 @@ public class Server
     // the actual logic behind the stop and wait
     private void stopAndwait()
     {
-        for(int i = 1; counter >= i; ++i)
+        for(int i = 1; counter + 1 >= i ; ++i)
         {
             try
             {
@@ -74,7 +75,7 @@ public class Server
                 data_istream = new DataInputStream(socket_stopAndwait.getInputStream());
                 data = data_istream.readUTF();
                 System.out.println("Transmitted Data: " + data);
-                System.out.printf("Frame %d received", i);
+                System.out.printf("Frame %d received\n", i);
 
                 ostream = new DataOutputStream(socket_stopAndwait.getOutputStream());
 

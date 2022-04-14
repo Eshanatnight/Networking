@@ -21,6 +21,7 @@ public class Client
 
     Client(int _port)
     {
+        System.out.println("Client Initialized...");
         m_port = _port;
     }
 
@@ -33,7 +34,7 @@ public class Client
     private void getNumberofFrames()
     {
         initComponents();
-        System.out.println("Enter Number of Frames: ");
+        System.out.print("Enter Number of Frames: ");
         frameNumber = scanner.nextInt();
     }
 
@@ -67,7 +68,7 @@ public class Client
 
     private void stopAndwait()
     {
-        for (int i = 1; 1 <= frameNumber; ++i)
+        for (int i = 1; i <= frameNumber; ++i)
         {
             System.out.print("Enter message : ");
             message = scanner.next();
