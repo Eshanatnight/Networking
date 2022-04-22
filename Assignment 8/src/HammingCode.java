@@ -179,14 +179,14 @@ public class HammingCode
         }
 
         // Print the Sent Data
-        System.out.print("\n\nSent Data is: ");
+        System.out.print("\nSent Data is: ");
 
         for(int k = 0; k < hammingCode.length; k++)
         {
             System.out.print(hammingCode[hammingCode.length - k - 1]);
         }
 
-        System.out.println("\n\n");
+        System.out.println("\n");
 
 
         receiveData(hammingCode, hammingCode.length - buffer.length);
@@ -234,11 +234,11 @@ public class HammingCode
         // check whether the finalLoc value is 0 or not
         if(finalLoc != 0)
         {
-            System.out.println("\n\nError is found at location " + finalLoc + ".");
+            System.out.println("\nError is found at location " + finalLoc + ".");
 
             data[finalLoc - 1] = (data[finalLoc - 1] + 1) % 2;
 
-            System.out.print("\n\n\nAfter correcting the error, the code is: ");
+            System.out.print("\n\nAfter correcting the error, the code is: ");
 
             for(int i = 0; i < size; i++)
             {
