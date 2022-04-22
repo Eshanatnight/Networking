@@ -42,7 +42,7 @@ public class HammingCode
 
     private void printbuffer(int[] buffer)
     {
-        for(int i = 1; i < size; i++)
+        for(int i = 0; i < size; i++)
         {
             System.out.print(buffer[size - i - 1]);
         }
@@ -70,7 +70,6 @@ public class HammingCode
         {
             // 2 power of parity bits must equal to the current position
             // i.e. number of bits traversed + number of parity bits + 1
-
             if(Math.pow(2, parityBits) == (i + parityBits + 1))
             {
                 parityBits++;
@@ -263,6 +262,7 @@ public class HammingCode
             {
                 System.out.print(data[k - 1]);
             }
+
             else
             {
                 pow--;
@@ -275,7 +275,6 @@ public class HammingCode
     private void run(boolean test)
     {
         init();
-        //printbuffer(this.buffer);
         setHammingCode();
         hammingCodeSize = this.hammingCode.length;
         printHammingCode();
