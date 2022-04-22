@@ -30,10 +30,10 @@ public class HammingCode
     // get data from user which we want to transfer
     private void getData()
     {
-        System.out.print("Enter the data:");
+        System.out.println("Enter the data:");
         for(int j = 0 ; j < size ; j++)
         {
-            System.out.println((size - j) + "bit: ");
+            System.out.print((size - j) + "bit: ");
 
             // fill array with user entered data
             buffer[size - j - 1] = consoleIn.nextInt();
@@ -149,7 +149,7 @@ public class HammingCode
 
     private void printHammingCode()
     {
-        System.out.println("Hamming Code: ");
+        System.out.println("\nHamming Code: ");
 
         for(int i = 0; i < hammingCode.length; i++)
         {
@@ -162,9 +162,9 @@ public class HammingCode
 
     private void testHammingCheck()
     {
-        System.out.println("For detecting error at the reciever end," +
-        " enter position of a bit to alter original data " +
-        "(0 for no error):"
+        System.out.print("\n\nFor detecting error at the reciever end\n" +
+        "Enter position of a bit to alter original data\n" +
+        "(0 for no error): "
         );
 
         errorPosition = consoleIn.nextInt();
@@ -180,14 +180,14 @@ public class HammingCode
         }
 
         // Print the Sent Data
-        System.out.println("Sent Data is:");
+        System.out.print("\n\nSent Data is: ");
 
         for(int k = 0; k < hammingCode.length; k++)
         {
             System.out.print(hammingCode[hammingCode.length - k - 1]);
         }
 
-        System.out.println();
+        System.out.println("\n\n");
 
 
         receiveData(hammingCode, hammingCode.length - buffer.length);
@@ -235,11 +235,11 @@ public class HammingCode
         // check whether the finalLoc value is 0 or not
         if(finalLoc != 0)
         {
-            System.out.println("Error is found at location " + finalLoc + ".");
+            System.out.println("\n\nError is found at location " + finalLoc + ".");
 
             data[finalLoc - 1] = (data[finalLoc - 1] + 1) % 2;
 
-            System.out.println("After correcting the error, the code is:");
+            System.out.print("\n\n\nAfter correcting the error, the code is: ");
 
             for(int i = 0; i < size; i++)
             {
@@ -254,7 +254,7 @@ public class HammingCode
         }
 
         // print the original data
-        System.out.println("The data sent from the sender:");
+        System.out.print("\n\nThe data sent from the sender: ");
 
         int pow = parityBits - 1;
         for(int k = size; k > 0; k--)
@@ -272,20 +272,24 @@ public class HammingCode
         System.out.println();
     }
 
+    private void run(boolean test)
+    {
+        init();
+        printbuffer(this.buffer);
+        setHammingCode();
+        hammingCodeSize = this.hammingCode.length;
+        printHammingCode();
+
+        if(test)
+        {
+            testHammingCheck();
+        }
+
+    }
+
     public static void main(String[] args)
     {
-
         var hc = new HammingCode();
-        hc.init();
-
-        hc.printbuffer(hc.buffer);
-
-        hc.setHammingCode();
-
-        hc.hammingCodeSize = hc.hammingCode.length;
-
-        hc.printHammingCode();
-
-        hc.testHammingCheck();
+        hc.run(true);
     }
 }
