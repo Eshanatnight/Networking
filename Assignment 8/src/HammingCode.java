@@ -23,7 +23,7 @@ public class HammingCode
         buffer = new int[size];
 
         getData();
-        System.out.println("Data: ");
+        System.out.println("\n\nData: ");
         printbuffer(buffer);
     }
 
@@ -275,7 +275,7 @@ public class HammingCode
     private void run(boolean test)
     {
         init();
-        printbuffer(this.buffer);
+        //printbuffer(this.buffer);
         setHammingCode();
         hammingCodeSize = this.hammingCode.length;
         printHammingCode();
